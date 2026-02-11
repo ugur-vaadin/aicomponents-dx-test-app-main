@@ -15,9 +15,16 @@
  */
 package com.vaadin.dx;
 
+import com.vaadin.flow.component.ComponentEvent;
+import com.vaadin.flow.component.ai.component.InputSubmitEvent;
+import com.vaadin.flow.component.ai.component.InputSubmitListener;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.NativeButton;
 import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.shared.Registration;
+
+import java.io.Serializable;
+import java.util.EventListener;
 
 /**
  * A pre-built custom chat input component using native HTML elements.
@@ -78,11 +85,24 @@ public class CustomChatInput extends Div {
         return sendButton;
     }
 
+    public Registration addChatInputSubmitListener(ChatInputSubmitListener listener) {
+        return sendButton.addClickListener(event -> listener.onChatInputSubmit(() -> value));
+    }
+
     /**
      * Returns the textarea element for subclasses to attach event listeners
      * (e.g., keyboard shortcuts).
      */
     protected Element getTextarea() {
         return textarea;
+    }
+
+    @FunctionalInterface
+    public interface ChatInputSubmitListener extends Serializable {
+        void onChatInputSubmit(ChatInputSubmitEvent event);
+    }
+
+    public interface ChatInputSubmitEvent extends Serializable {
+        String getValue();
     }
 }

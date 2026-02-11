@@ -61,11 +61,11 @@ public class TaskView extends Div {
     // TASK 6: Using tools
     // =============================================================
     //
-    // 1) Create a recipe lookup tool with a few recipes that the
-    // assistant can call to find recipe details.
+    // 1) Add a recipe lookup tool with a few recipes that the
+    // assistant can call to find recipe details. You can use the
+    // RecipeHelper class to create the tool.
     //
-    // 2) Connect the recipe tool to the assistant and ask for a
-    // recipe specified in the tool.
+    // 2) Ask for a recipe specified in the tool.
 
     public TaskView() {
         // TODO implement here
