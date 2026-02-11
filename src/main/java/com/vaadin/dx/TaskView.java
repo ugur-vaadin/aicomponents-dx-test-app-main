@@ -45,9 +45,7 @@ public class TaskView extends Div {
     // TASK 4: File attachments
     // =============================================================
     //
-    // 1) Add file upload support.
-    //
-    // 2) Upload the photo "runeberginTorttu.jpeg" under resources
+    // 1) Upload the photo "runeberginTorttu.jpeg" under resources
     // and ask the assistant to identify.
     //
     // =============================================================
